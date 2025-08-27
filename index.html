@@ -66,12 +66,18 @@
         }
 
         .sidebar-header h2 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            background: linear-gradient(135deg, var(--primary) 0%, #a78bfa 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, var(--primary) 0%, #a78bfa 100%);
+
+    /* ↓ estándar + prefijo (en este orden) */
+    background-clip: text;              /* estándar */
+    -webkit-background-clip: text;      /* WebKit */
+
+    /* ↓ fallbacks para que el texto sea transparente */
+    color: transparent;                  /* estándar */
+    -webkit-text-fill-color: transparent;/* WebKit */
+}
 
         .model-selector {
             padding: 20px;
